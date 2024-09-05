@@ -40,6 +40,7 @@ namespace EjemploHL.Controllers
 					lista = mapeoDatosCatalogo.ListarCatalogoDetalle(query);
 				});
 
+
 				return Ok(lista);
 			}
 			catch (Exception ex)
