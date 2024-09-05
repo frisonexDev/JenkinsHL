@@ -3,20 +3,20 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/tu_usuario/tu_repositorio.git'
+                git 'https://github.com/frisonexDev/JenkinsHL/tree/main/ProyectoPortalHL/ApisHL/ClienteHL/ClienteHL'
             }
         }
         stage('Build') {
             steps {
                 script {
-                    docker.build('mi-imagen', '.')
+                    docker.build('ClienteHL', '.')
                 }
             }
         }
         stage('Test') {
             steps {
                 script {
-                    docker.image('mi-imagen').inside {
+                    docker.image('ClienteHL').inside {
                         sh 'dotnet test'
                     }
                 }
@@ -25,9 +25,24 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Aquí puedes agregar el código para desplegar tu aplicación.
-                    // Ejemplo: `sh 'docker push mi-imagen'`
-                    sh 'docker-compose up -d'
+                    // Autenticación en el registro Docker, si es necesario
+                    // sh 'docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD'
+
+                    // Subir la imagen al registro Docker
+                    // sh 'docker tag ClienteHL:latest my-dockerhub-username/ClienteHL:latest'
+                    // sh 'docker push my-dockerhub-username/ClienteHL:latest'
+
+                    // Ejecutar el contenedor Docker
+                    sh 'docker stop ClienteHL-container || true' // Detiene el contenedor si está en ejecución
+                    sh 'docker rm ClienteHL-container || true'   // Elimina el contenedor si existe
+
+                    // Ejecutar el contenedor en modo detach con las variables de entorno necesarias
+                    sh '''
+                        docker run -d --name ClienteHL-container -p 80:80 \
+                        -e ASPNETCORE_ENVIRONMENT=Development \
+                        -e DATABASEHUMALAB="Data Source=10.23.10.5;Initial Catalog=DbPortalHumalab;User ID=sa;Password=Humalab123; TrustServerCertificate=True" \
+                        ClienteHL
+                    '''                  
                 }
             }
         }
