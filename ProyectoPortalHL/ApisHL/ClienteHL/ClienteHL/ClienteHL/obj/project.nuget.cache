@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "LdIOTwmpPmpwsYI0QcX69q9KMetyzcqKaVL/4CCb0lMhzxcXzVbpVPOIVr/fAJDD7M4a5Ft72z9OJXkK32UUXA==",
+  "success": true,
+  "projectFilePath": "C:\\DesarrolloAutomatizado\\ProyectoPortalHL\\ApisHL\\ClienteHL\\ClienteHL\\ClienteHL\\ClienteHL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Brenda Jimenez\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Brenda Jimenez\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Brenda Jimenez\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
+    "C:\\Users\\Brenda Jimenez\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Brenda Jimenez\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Brenda Jimenez\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Brenda Jimenez\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
